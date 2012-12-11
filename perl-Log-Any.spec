@@ -1,20 +1,20 @@
 %define upstream_name    Log-Any
 %define upstream_version 0.12
 
-Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 2
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
+Release:	3
 
-Summary:    No summary found
-License:    GPL+ or Artistic
-Group:      Development/Perl
-Url:        http://search.cpan.org/dist/%{upstream_name}
-Source0:    http://www.cpan.org/modules/by-module/Log/%{upstream_name}-%{upstream_version}.tar.gz
+Summary:	Allows CPAN modules to safely and efficiently log messages
+License:	GPL+ or Artistic
+Group:		Development/Perl
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/Log/%{upstream_name}-%{upstream_version}.tar.gz
 
-BuildRequires: perl(ExtUtils::MakeMaker)
-BuildRequires: perl(Test::Simple)
-BuildArch: noarch
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
+BuildRequires:	perl-devel
+BuildRequires:	perl(ExtUtils::MakeMaker)
+BuildRequires:	perl(Test::Simple)
+BuildArch:	noarch
 
 %description
 'Log::Any' allows CPAN modules to safely and efficiently log messages,
@@ -34,24 +34,41 @@ Log::Any::Adapter.
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
-
-%{make}
+perl Makefile.PL INSTALLDIRS=vendor
+%make
 
 %check
-%{make} test
+%make test
 
 %install
-rm -rf %buildroot
 %makeinstall_std
 
-%clean
-rm -rf %buildroot
-
 %files
-%defattr(-,root,root)
 %doc Changes README
 %{_mandir}/man3/*
-%perl_vendorlib/*
+%{perl_vendorlib}/*
+
+%changelog
+* Sat Apr 23 2011 Funda Wang <fwang@mandriva.org> 0.120.0-2mdv2011.0
++ Revision: 657446
+- rebuild for updated spec-helper
+
+* Sat Mar 26 2011 Guillaume Rousse <guillomovitch@mandriva.org> 0.120.0-1
++ Revision: 648575
+- update to new version 0.12
+
+* Sat Feb 13 2010 Jérôme Quelin <jquelin@mandriva.org> 0.110.0-1mdv2011.0
++ Revision: 505267
+- update to 0.11
+
+* Wed Jan 06 2010 Jérôme Quelin <jquelin@mandriva.org> 0.100.0-1mdv2010.1
++ Revision: 486603
+- update to 0.10
+
+* Tue Jan 05 2010 Jérôme Quelin <jquelin@mandriva.org> 0.80.0-1mdv2010.1
++ Revision: 486312
+- import perl-Log-Any
 
 
+* Tue Jan 05 2010 cpan2dist 0.08-1mdv
+- initial mdv release, generated with cpan2dist
