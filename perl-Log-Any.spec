@@ -1,15 +1,15 @@
 %define upstream_name    Log-Any
-%define upstream_version 0.12
+%define upstream_version 0.15
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	3
+Version:	%perl_convert_version 0.15
+Release:	1
 
 Summary:	Allows CPAN modules to safely and efficiently log messages
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Log/%{upstream_name}-%{upstream_version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/Log/Log-Any-0.15.tar.gz
 
 BuildRequires:	perl-devel
 BuildRequires:	perl(ExtUtils::MakeMaker)
@@ -72,3 +72,4 @@ perl Makefile.PL INSTALLDIRS=vendor
 
 * Tue Jan 05 2010 cpan2dist 0.08-1mdv
 - initial mdv release, generated with cpan2dist
+
