@@ -3,7 +3,7 @@
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version 0.15
-Release:	2
+Release:	3
 
 Summary:	Allows CPAN modules to safely and efficiently log messages
 License:	GPL+ or Artistic
