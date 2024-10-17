@@ -8,7 +8,7 @@ Release:	3
 Summary:	Allows CPAN modules to safely and efficiently log messages
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{upstream_name}
+Url:		https://search.cpan.org/dist/%{upstream_name}
 Source0:	http://www.cpan.org/modules/by-module/Log/Log-Any-0.15.tar.gz
 
 BuildRequires:	perl-devel
