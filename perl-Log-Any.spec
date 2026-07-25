@@ -1,15 +1,15 @@
 %define upstream_name    Log-Any
-%define upstream_version 0.15
+%define upstream_version 1.720
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version 0.15
-Release:	3
+Version:	%{upstream_version}
+Release:	1
 
 Summary:	Allows CPAN modules to safely and efficiently log messages
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Log/Log-Any-0.15.tar.gz
+Url:		https://github.com/preaction/Log-Any
+Source0:	https://cpan.metacpan.org/authors/id/P/PR/PREACTION/Log-Any-1.720.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
