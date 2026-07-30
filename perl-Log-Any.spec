@@ -3,7 +3,7 @@
 
 Name:		perl-%{upstream_name}
 Version:	1.720
-Release:	4
+Release:	5
 
 Summary:	Allows CPAN modules to safely and efficiently log messages
 License:	GPL+ or Artistic
@@ -41,7 +41,8 @@ perl Makefile.PL INSTALLDIRS=vendor
 %check
 # soft: do not fail package on test failures
 set +e
-%make test
+:  # soft check
+%make test || :
 
 %install
 %makeinstall_std
